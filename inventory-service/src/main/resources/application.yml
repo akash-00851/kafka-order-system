@@ -1,0 +1,35 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: inventory-service
+
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: inventory_db
+
+  kafka:
+    bootstrap-servers: localhost:29092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      acks: all
+      retries: 3
+    consumer:
+      group-id: inventory-service-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      auto-offset-reset: earliest
+      properties:
+        spring.json.trusted.packages: "com.akash.*"
+        spring.json.use.type.headers: false
+        spring.json.value.default.type: com.akash.inventoryservice.dto.OrderCreatedEvent
+
+app:
+  kafka:
+    topic:
+      order-created: orders.created
+      inventory-status: inventory.status
