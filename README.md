@@ -41,7 +41,7 @@ Kafka, MySQL, MongoDB, and Kafka UI all run via Docker Compose.
 
 ## Tech stack
 
-Java 17, Spring Boot, Spring MVC, Spring Data JPA, Spring Data MongoDB,
+Java 21, Spring Boot, Spring MVC, Spring Data JPA, Spring Data MongoDB,
 Spring Kafka, MySQL, MongoDB, Apache Kafka (KRaft mode), Docker Compose.
 
 ## Prerequisites
