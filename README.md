@@ -46,7 +46,7 @@ Spring Kafka, MySQL, MongoDB, Apache Kafka (KRaft mode), Docker Compose.
 
 ## Prerequisites
 
-- Java 17+
+- Java 21
 - Maven 3.8+
 - Docker Desktop (running before you start anything)
 
